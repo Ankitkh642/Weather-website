@@ -1,0 +1,17 @@
+header{
+    text-align: center;
+    padding-top: 40px;
+}
+
+footer{
+    text-align: center;
+    margin-top: 60px;
+}
+h1{
+     font-size: 64px;
+     font-family: 'Architects Daughter', cursive;
+}
+
+div{
+    text-align: center;
+}
