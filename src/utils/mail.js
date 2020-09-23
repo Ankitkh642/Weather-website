@@ -5,13 +5,13 @@ const sendMsg=(message)=>{
     var transporter=nodemailer.createTransport({
         service : 'gmail',
         auth:{
-            user:'ankitkh6942@gmail.com',
+            user:'ankitkh6842@gmail.com',
             pass:'Pawankh@12'
         }
     })
     
     var mailOptions={
-        from:'ankitkh6942@gmail.com',
+        from:'ankitkh6842@gmail.com',
         to:'ankitkh642@gmail.com',
         subject:'Help Mail',
         text:message
