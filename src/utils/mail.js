@@ -3,15 +3,20 @@ const nodemailer=require('nodemailer')
 
 const sendMsg=(message)=>{
     var transporter=nodemailer.createTransport({
-        service : 'gmail',
-        auth:{
-            user:'ankitkh6942@gmail.com',
-            pass:'Pawankh@12'
+        host: "smtp.outlook.com", // hostname
+        secureConnection: false, // TLS requires secureConnection to be false
+        port: 587, // port for secure SMTP
+        tls: {
+        ciphers:'SSLv3'
+        },
+        auth: {
+            user: 'yashikakh12@outlook.com',
+            pass: 'Yashikakh@12'
         }
     })
     
     var mailOptions={
-        from:'ankitkh6942@gmail.com',
+        from:'yashikakh12@outlook.com',
         to:'ankitkh642@gmail.com',
         subject:'Help Mail',
         text:message
