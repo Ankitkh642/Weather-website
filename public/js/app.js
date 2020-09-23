@@ -2,6 +2,7 @@ const input=document.querySelector('input')
 const weatherForm=document.querySelector('form')
 const msg1=document.querySelector('#p1')
 const msg2=document.querySelector('#p2')
+
 weatherForm.addEventListener('submit',(e)=>{
 
     e.preventDefault()
@@ -21,3 +22,5 @@ weatherForm.addEventListener('submit',(e)=>{
         })
     })
 })
+
+

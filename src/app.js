@@ -5,6 +5,9 @@ const geocode=require('./utils/geocode')
 const forecast=require('./utils/forecast')
 const { query } = require('express')
 
+const mail=require('./utils/mail')
+const sendMsg = require('./utils/mail')
+
 const dircPath=path.join(__dirname,'../public')
 const app=express()
 const viewPath=path.join(__dirname,'../templates/views')
@@ -78,16 +81,18 @@ app.get('/weather',(req,res)=>{
     }
 })
 
-app.get('/products',(req,res)=>{
-    if(!req.query.search)
+app.get('/send',(req,res)=>{
+    if(!req.query.message)
     {
         res.send({
-            error:"No query obtained"
+            error:'No message found'
         })
     }
-    else
-    {
-        res.send(req.query)
+    else{
+        sendMsg(req.query.message)
+        res.send({
+            success:'Message sent successfully'
+        })
     }
 })
 
@@ -97,6 +102,8 @@ app.get('*',(req,res)=>{
         Name :'Ankit'
     })
 })
+
+
 
 
 
