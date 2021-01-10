@@ -6,7 +6,7 @@ const forecast=require('./utils/forecast')
 const { query } = require('express')
 
 const mail=require('./utils/mail')
-const sendMsg = require('./utils/mail')
+const {sendEmail} = require('./utils/mail')
 
 const dircPath=path.join(__dirname,'../public')
 const app=express()
@@ -89,7 +89,7 @@ app.get('/send',(req,res)=>{
         })
     }
     else{
-        sendMsg(req.query.message)
+        sendEmail(req.query.message)
         res.send({
             success:'Message sent successfully'
         })
